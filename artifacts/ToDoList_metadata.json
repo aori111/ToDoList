@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -102,6 +107,25 @@
 				"name": "addTask",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "addressToTaskCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -225,11 +249,11 @@
 	},
 	"sources": {
 		"contracts/3_Ballot.sol": {
-			"keccak256": "0x51766a664dce9b72e54fae90174080fe80c5160b592eafb172793bb1cf8277ab",
+			"keccak256": "0x3f04b6b8395627446063674a1138e9cd5f3d5aec2a3f5a32d40dabbd3c79b7d0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0b3faddb7da6dee54be9d87abaf8a9c13892dd2636a21f45046597e055f8fe8c",
-				"dweb:/ipfs/QmQwFAi45vSt4Ssxwo6jnDc22PLpvcLekYMRQvSQTCLR6V"
+				"bzz-raw://c03f7ad064e41b64bad916988327fb5b9f24f2dde4c605cc3f10337c474ca232",
+				"dweb:/ipfs/QmW4VQRx9zghR88BaUfno9DDhJgZ9HPdGd3ojQG7qbRhvR"
 			]
 		}
 	},

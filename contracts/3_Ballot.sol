@@ -5,6 +5,12 @@ pragma solidity >=0.7.0 <0.9.0;
 contract ToDoList {
     // Address owner
     address assigner;
+    mapping (address => uint) public addressToTaskCount;
+
+    constructor() {
+        assigner = msg.sender;
+        addressToTaskCount[msg.sender] = 1;
+    }
 
     enum STATUS {
         PENDING,
@@ -96,6 +102,16 @@ contract ToDoList {
     
     function getTaskCount() public view returns (uint) {
         return tasks[msg.sender].length;
+    }
+
+    modifier onlyAssigner {
+        require(msg.sender == assigner, "Only assigner");
+        _;
+    }
+
+    modifier onlyAssignee {
+        require(addressToTaskCount[msg.sender] != 0, "Only assignee");
+        _;
     }
 
     modifier validTaskId(uint256 _taskId) {
