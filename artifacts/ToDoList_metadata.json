@@ -14,6 +14,19 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "unixTime",
+						"type": "uint256"
+					}
+				],
+				"name": "LogCurrentUnixTime",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"components": [
 							{
 								"internalType": "uint256",
@@ -51,6 +64,46 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "taskId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "assignee",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "task",
+								"type": "string"
+							},
+							{
+								"internalType": "uint32",
+								"name": "deadline",
+								"type": "uint32"
+							},
+							{
+								"internalType": "enum ToDoList.STATUS",
+								"name": "status",
+								"type": "uint8"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct ToDoList.ToDo",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"name": "TaskReassigned",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -77,8 +130,45 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_taskId",
+						"name": "_deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_curentUnixTime",
+						"type": "uint256"
+					}
+				],
+				"name": "checkDeadlineValid",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "_taskId",
+						"type": "uint32"
+					}
+				],
+				"name": "completeTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "_taskId",
+						"type": "uint32"
 					},
 					{
 						"internalType": "address",
@@ -87,6 +177,13 @@
 					}
 				],
 				"name": "reassignTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refreshTask",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -120,11 +217,11 @@
 	},
 	"sources": {
 		"contracts/3_Ballot.sol": {
-			"keccak256": "0x499421d7bd0fac9827d8fb04c12eee684f168692dc59c11fe6f92ba2c10a1c7f",
+			"keccak256": "0xbb80d99632e2131a897c1ecb8747052105c4f05b2f4c8fc07fd1fe1d1d32dc73",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6c9017a37e74c950ddaa435a229092a75b257379e3cf6c116628396b455a13b3",
-				"dweb:/ipfs/QmbUsyYbsz14W6ms6WHYfzvbJAT4Kask4HA26EF3izJNfN"
+				"bzz-raw://b91059113bef5a75bdfab5dd0f48eaf1164583022e962a96fe2b0bb94322d5d6",
+				"dweb:/ipfs/QmT9TXCQ17inL2MMnHmYuYQbMrNiHMxDCiVXGKxiPFvpmc"
 			]
 		}
 	},
